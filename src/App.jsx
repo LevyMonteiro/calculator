@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import { Keyboard } from './keyboard'
 
-function App() {
+const App = () => {
 
   return (
-    <>
-      
-    </>
+    <div className='container'>
+      <Keyboard />
+    </div>
   )
 }
 
