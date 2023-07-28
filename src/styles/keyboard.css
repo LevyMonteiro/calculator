@@ -1,12 +1,9 @@
 .keyboard {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.keyboard {
     height: 340px;
     width: 380px;
-    padding: 16px;
+    /* padding: 16px; */
     gap: 4px;
     background-color: black;
 }

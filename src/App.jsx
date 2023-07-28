@@ -1,12 +1,15 @@
 import { useState } from 'react'
-import './App.css'
-import { Keyboard } from './keyboard'
+import './styles/App.css'
+import { Keyboard } from './components/keyboard'
+import { calcData } from './context/calculatorData'
 
 const App = () => {
 
   return (
     <div className='container'>
-      <Keyboard />
+      <div className="calculator">
+        <Keyboard calcData={ calcData }/>
+      </div>
     </div>
   )
 }
