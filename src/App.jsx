@@ -2,6 +2,7 @@ import './styles/App.css'
 import { Keyboard } from './components/keyboard'
 import { calcData } from './context/calculatorData'
 import { Display } from './components/display'
+import { Footer } from './components/footer'
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
         <Display />
         <Keyboard calcData={ calcData }/>
       </div>
+      <Footer />
     </div>
   )
 }
