@@ -21,9 +21,12 @@
 .display p {
   margin: 8px 0;
   opacity: 0.8;
+  min-height: 18px;
+  color: #ffa500;
 }
 
 .display h2 {
   margin-bottom: 16px;
   opacity: 0.9;
+  min-height: 28px;
 }

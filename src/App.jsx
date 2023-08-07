@@ -18,11 +18,18 @@ const App = () => {
   }
   
   const handleClear = () => {
-  
+    setInput('0')
+    setOutput('')
+    setCalcData('')
   }
 
   const handleBackspace = () => {
-
+    if(input === '0' || input.length === 1) {
+      setInput('0')
+    } else if(input.length) {
+      setInput(input.slice(0, -1))
+      setCalcData(calcData.slice(0, -1))
+    }
   }
   
   const handleNumber = (value) => {
@@ -30,13 +37,13 @@ const App = () => {
     if(!calcData.length) {
       setCalcData(`${value}`)
       setInput(`${value}`)
+    } else if(input === '0' && value !== 0 ) {
+      setInput(`${value}`)
+      setCalcData(`${value}`)
     } else if(value === 0 && (calcData === '0' || input === '0')) {
       setCalcData(`${calcData}`)
     } else {
-      const lastChar = calcData.charAt(calcData.length - 1)
-      const isLastCharOperator = operators.includes(lastChar)
-
-      setInput(isLastCharOperator ? `${value}` : `${input}${value}`)
+      setInput(`${input}${value}`)
       setCalcData(`${calcData}${value}`)
     }
   }
