@@ -12,52 +12,59 @@ const App = () => {
   const [input, setInput] = useState('0');
   const [output, setOutput] = useState('');
   const [calcData, setCalcData] = useState('')
-    
-  const handleSubmit = () => {
-
-  }
   
-  const handleClear = () => {
-    setInput('0')
-    setOutput('')
-    setCalcData('')
-  }
-
-  const handleBackspace = () => {
-    if(input === '0' || input.length === 1) {
-      setInput('0')
-    } else if(input.length) {
-      setInput(input.slice(0, -1))
-      setCalcData(calcData.slice(0, -1))
-    }
-  }
-  
-  const handleNumber = (value) => {
-    
-    if(!calcData.length) {
-      setCalcData(`${value}`)
-      setInput(`${value}`)
-    } else if(input === '0' && value !== 0 ) {
-      setInput(`${value}`)
-      setCalcData(`${value}`)
-    } else if(value === 0 && (calcData === '0' || input === '0')) {
-      setCalcData(`${calcData}`)
-    } else {
-      setInput(`${input}${value}`)
-      setCalcData(`${calcData}${value}`)
-    }
-  }
-  
-  const handleOperator = (value) => {
-  
-  }
-  
-  const handleDecimal = () => {
-  
-  }
-
   const handleInput = (value) => {
+     
+    const handleSubmit = () => {
+
+    }
     
+    const handleClear = () => {
+      setInput('0')
+      setOutput('')
+      setCalcData('')
+    }
+
+    const handleBackspace = () => {
+      if(input === '0' || input.length === 1) {
+        setInput('0')
+      } else if(input.length) {
+        setInput(input.slice(0, -1))
+        setCalcData(calcData.slice(0, -1))
+      }
+    }
+    
+    const handleNumber = (value) => {
+      
+      if(!calcData.length) {
+        setCalcData(`${value}`)
+        setInput(`${value}`)
+      } else if(input === '0' && value !== 0 ) {
+        setInput(`${value}`)
+        setCalcData(`${value}`)
+      } else if(value === 0 && (calcData === '0' || input === '0')) {
+        setCalcData(`${calcData}`)
+      } else {
+        setInput(`${input}${value}`)
+        setCalcData(`${calcData}${value}`)
+      }
+    }
+    
+    const handleOperator = (value) => {
+    
+    }
+    
+    const handleDecimal = () => {
+      if(!calcData.length || input === '0') {
+        setInput(`0${value}`)
+        setCalcData(`0${value}`)
+      } else if(input.split('').some(elm => elm === value)) {
+        setInput(input)
+        setCalcData(calcData)
+      }
+    }
+
+  
     const operator = operators.find(op => op === value)
     const number = numbers.find(num => num === value)
 
