@@ -4,7 +4,7 @@ import { Keyboard } from './components/keyboard'
 import { Display } from './components/display'
 import { Footer } from './components/footer'
 
-const operators = ["AC", "/", "x", "+", "-", "="];
+const operators = ["AC", "/", "*", "+", "-", "="];
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const App = () => {
@@ -35,21 +35,20 @@ const App = () => {
     }
     
     const handleNumber = (value) => {
-      
-      if(!calcData.length) {
-        setCalcData(`${value}`)
+      if(operators.some(op => op == input)) {
+        setCalcData(`${calcData}${input}`)
         setInput(`${value}`)
-      } else if(input === '0' && value !== 0 ) {
-        setInput(`${value}`)
-        setCalcData(`${value}`)
-      } else if(value === 0 && (calcData === '0' || input === '0')) {
-        setCalcData(`${calcData}`)
       } else {
-        setInput(`${input}${value}`)
-        setCalcData(`${calcData}${value}`)
+        if (input === '0' && value === 0) {
+          setInput('0')
+        } else if(input === '0' && value !== 0 ) {
+          setInput(`${value}`)
+        } else {
+          setInput(`${input}${value}`)
+        }
       }
     }
-    
+          
     const handleOperator = (value) => {
     
     }
@@ -93,7 +92,7 @@ const App = () => {
   return (
     <div className='container'>
       <div className="calculator">
-        <Display input={input} output={output} />
+        <Display input={input} calcData={calcData} />
         <Keyboard handleInput={handleInput}/>
       </div>
       <Footer />

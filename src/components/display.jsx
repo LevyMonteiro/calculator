@@ -1,10 +1,10 @@
 import '../styles/display.css'
 
-const Display = ({ input, output }) => {
+const Display = ({ input, calcData }) => {
   return (
     <div className="display">
       <h1>Calculator</h1>
-      <p className="output">{output}</p>
+      <p className="calcData">{calcData}</p>
       <h2 className="input">{input}</h2>
     </div>
   )
