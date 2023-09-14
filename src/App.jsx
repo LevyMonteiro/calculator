@@ -50,7 +50,19 @@ const App = () => {
     }
           
     const handleOperator = (value) => {
-    
+      if(input === '0' && value === '-') {
+        setInput('-')
+      } else if(input !== '0' || calcData.length) {
+        if(operators.some(op => input === op)) {
+          setInput(value)
+        } else {
+          setCalcData(`${calcData}${input}`)
+          setInput(value)
+        }
+      } else {
+        setCalcData(`${calcData}${input}`)
+      } 
+      console.log(calcData)
     }
     
     const handleDecimal = () => {
