@@ -16,7 +16,10 @@ const App = () => {
   const handleInput = (value) => {
      
     const handleSubmit = () => {
-
+      setOutput(`${calcData}${input}`)
+      setCalcData('')
+      const total = eval(`${calcData}${input}`)
+      setInput(total)
     }
     
     const handleClear = () => {
@@ -106,7 +109,7 @@ const App = () => {
   return (
     <div className='container'>
       <div className="calculator">
-        <Display input={input} calcData={calcData} />
+        <Display input={input} calcData={calcData} output={output}/>
         <Keyboard handleInput={handleInput}/>
       </div>
       <Footer />
