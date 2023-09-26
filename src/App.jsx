@@ -62,16 +62,20 @@ const App = () => {
       } else {
         setCalcData(`${calcData}${input}`)
       } 
-      console.log(calcData)
-    }
+    } 
     
     const handleDecimal = () => {
-      if(!calcData.length || input === '0') {
-        setInput(`0${value}`)
-        setCalcData(`0${value}`)
-      } else if(input.split('').some(elm => elm === value)) {
+      if(!calcData.length && input === '0') {
+        setInput('0.')
+        // setCalcData(`0${value}`)
+      } else if(input.split('').some(elm => elm === '.')) {
         setInput(input)
-        setCalcData(calcData)
+        // setCalcData(calcData)
+      } else if(operators.find(op => op === input)) {
+        setCalcData(`${calcData}${input}`)
+        setInput('0.')
+      } else {
+        setInput(`${input}.`)
       }
     }
 
