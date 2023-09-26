@@ -6,6 +6,10 @@ Check out a short video demonstrating the app in action:
 
 
 
+https://github.com/LevyMonteiro/calculator/assets/102385102/eb497cc1-6f78-458f-ac40-d0ce902fff0e
+
+
+
 ## Getting Started
 To view the website, simply visit the live URL <a href="https://calculator-levymonteiro.vercel.app/" target="_blank">here</a>.
 
