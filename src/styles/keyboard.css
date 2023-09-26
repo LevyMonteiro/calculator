@@ -43,3 +43,11 @@
 #divide, #multiply, #subtract, #add, #equals {
     background-color: #0b575a;
 }
+
+@media (max-width: 414px) {
+    .keyboard {
+        width: 300px;
+        height: 280px;
+        gap: 2px;
+    }
+}
