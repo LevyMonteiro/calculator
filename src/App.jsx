@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Keyboard from './components/Keyboard';
 import Display from './components/Display';
 import Footer from './components/Footer';
-import './index.css';
 
 const operators = ['AC', '/', '*', '+', '-', '='];
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -102,8 +101,11 @@ export default function App() {
   };
 
   return (
-    <div className='container'>
-      <div className='calculator'>
+    <div id='app' className='flex flex-col justify-center items-center'>
+      <div
+        id='calculator'
+        className='w-96 flex flex-col justify-center items-center bg-neutral-900 px-4 py-6 rounded-xl'
+      >
         <Display input={input} calcData={calcData} output={output} />
         <Keyboard handleInput={handleInput} />
       </div>
