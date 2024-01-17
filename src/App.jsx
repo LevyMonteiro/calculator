@@ -1,13 +1,13 @@
-import './styles/App.css';
 import { useState } from 'react';
-import { Keyboard } from './components/keyboard';
-import { Display } from './components/display';
-import { Footer } from './components/footer';
+import Keyboard from './components/Keyboard';
+import Display from './components/Display';
+import Footer from './components/Footer';
+import './index.css';
 
 const operators = ['AC', '/', '*', '+', '-', '='];
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-function App() {
+export default function App() {
   const [input, setInput] = useState('0');
   const [output, setOutput] = useState('');
   const [calcData, setCalcData] = useState('');
@@ -111,5 +111,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
