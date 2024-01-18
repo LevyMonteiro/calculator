@@ -10,6 +10,6 @@
 
 @layer components {
   body {
-    @apply w-screen h-screen bg-neutral-600 flex flex-col justify-center items-center text-neutral-50;
+    @apply w-screen h-screen overflow-hidden bg-neutral-600 flex justify-center items-center text-neutral-50;
   }
 }

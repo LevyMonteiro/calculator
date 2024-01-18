@@ -52,12 +52,15 @@ export default function Keyboard({ handleInput }) {
   ];
 
   return (
-    <div id='keyboard' className='w-full grid grid-cols-4 gap-[5px] text-xl'>
+    <div
+      id='keyboard'
+      className='w-full grid grid-cols-4 gap-1 sm:gap-[5px] text-base sm:text-xl'
+    >
       {calcData.map((data) => (
         <button
           className={`${data.cs ? data.cs : ''} ${
             data.bg ? data.bg : 'bg-neutral-700'
-          } h-16 hover:brightness-110 rounded-[4px]`}
+          } flex justify-center items-center h-12 xs:h-14 sm:h-16 hover:brightness-110 rounded-[4px]`}
           key={data.id}
           id={data.id}
           dangerouslySetInnerHTML={{

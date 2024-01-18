@@ -1,6 +1,9 @@
 export default function Footer() {
   return (
-    <footer id='Footer' className='m-4 text-sm text-shadow-sm'>
+    <footer
+      id='Footer'
+      className='w-full my-4 text-center text-sm scale-75 xs:scale-90 sm:scale-100 text-shadow-sm'
+    >
       coded by
       <a
         href='https://github.com/levymonteiro'

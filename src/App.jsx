@@ -101,10 +101,10 @@ export default function App() {
   };
 
   return (
-    <div id='app' className='flex flex-col justify-center items-center'>
+    <div id='app'>
       <div
         id='calculator'
-        className='w-96 flex flex-col justify-center items-center bg-neutral-900 px-4 py-6 rounded-xl'
+        className='w-72 xs:w-[340px] sm:w-96 flex flex-col justify-center items-center bg-neutral-900 px-3 py-4 xs:px-4 xs:py-6 rounded-xl'
       >
         <Display input={input} calcData={calcData} output={output} />
         <Keyboard handleInput={handleInput} />
