@@ -3,8 +3,8 @@ import Keyboard from './components/Keyboard';
 import Display from './components/Display';
 import Footer from './components/Footer';
 
-const operators = ['AC', '/', '*', '+', '-', '='];
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const operators = ['Delete', '/', '*', '+', '-', '='];
+const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 export default function App() {
   const [input, setInput] = useState('0');
@@ -80,12 +80,13 @@ export default function App() {
 
     switch (value) {
       case '=':
+      case 'Enter':
         handleSubmit();
         break;
-      case 'AC':
+      case 'Delete':
         handleClear();
         break;
-      case 'backspace':
+      case 'Backspace':
         handleBackspace();
         break;
       case number:
@@ -95,6 +96,7 @@ export default function App() {
         handleOperator(value);
         break;
       case '.':
+      case ',':
         handleDecimal();
         break;
     }
