@@ -2,7 +2,9 @@
 
 ## About
 
-This is a JavaScript calculator built using React components, hooks, and states, among other technologies.
+This is a JavaScript calculator built using React components, hooks and states, Tailwind among other technologies. 
+<br />
+You can use your keyboard or click in the key elements on screen to make your calculations.
 
 ## Demo
 
@@ -33,6 +35,7 @@ This website was built using the following technologies:
 <li>Javascript</li>
 <li>Vite</li>
 <li>React</li>
+<li>Tailwind</li>
 </ul>
 
 ## Reference
